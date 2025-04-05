@@ -9,3 +9,4 @@ repos:
     rev: v0.13.2
     hooks:
     -   id: typstyle
+        additional_dependencies: ["cli:typstyle:0.12.14"]
