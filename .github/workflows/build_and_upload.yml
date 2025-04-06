@@ -25,7 +25,7 @@ jobs:
         id: typst-files
         run: |
           echo "files=$(find . -name "*.typ" -depth 1)" >> "$GITHUB_OUTPUT"
-  
+
       - name: Typst
         uses: jncfa/typst-action@main
         with:
