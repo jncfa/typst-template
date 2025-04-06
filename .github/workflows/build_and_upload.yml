@@ -24,8 +24,9 @@ jobs:
       - name: List all files that end with *.typ on the root folder
         id: typst-files
         run: |
-          echo "files=$(find . -depth -maxdepth 1 -name '*.typ')" >> "$GITHUB_OUTPUT"
-
+          echo 'files<<EOF' >> $GITHUB_OUTPUT
+          find . -depth -maxdepth 1 -name '*.typ' >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
       - name: Typst
         uses: jncfa/typst-action@main
         with:
