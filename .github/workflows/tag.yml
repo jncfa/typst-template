@@ -14,6 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          # need a custom token to retrigger the workflow (as GitHub prevents recursive workflows)
           token: ${{ secrets.TAG_PUSH_PAT }}
 
       - name: Create tag
