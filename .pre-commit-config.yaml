@@ -5,8 +5,12 @@ repos:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
     -   id: check-yaml
--   repo: https://github.com/Enter-tainer/typstyle
-    rev: v0.13.2
+-   repo: local
     hooks:
-    -   id: typstyle
-        additional_dependencies: ["cli:typstyle:0.12.14"]
+    -   id: typstyle-docker
+        name: typstyle-docker
+        language: docker_image
+        types: [file]
+        files: \.typ$
+        args: [-i]
+        entry: ghcr.io/jncfa/typstyle
